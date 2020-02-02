@@ -2,19 +2,19 @@
 import face_recognition
 from PIL import Image, ImageDraw #This pillow libary is required for drawing rectangle around the face
 
-pics = fr.load_image_file('sallugroup.jpeg') #Load the Image
+pics = fr.load_image_file('Vihan-flash/sallugroup.jpeg') #Load the Image
 face_loc = fr.face_locations(pics) #To find out the number of faces and its count.
 print(face_loc)
 print("Shreyas")
 print(f"There are" {len(face_loc)} "people in this image")
 
-salmankhan = fr.load_image_file('sallu.jpeg')
+salmankhan = fr.load_image_file('Vihan-flash/sallu.jpeg')
 salmankhan_pic  =  fr.face_encodings(salmankhan)[0]#for encoding the image
 
 known_face_encoding = [salmankhan_pic] #Assign the list to the encoder variable
 known_face_name = ["salman khan"]
 
-test_image = fr.load_image_file('sallugroup.jpeg')
+test_image = fr.load_image_file('Vihan-flash/sallugroup.jpeg')
 face_location = fr.face_locations(test_image)
 face_encoding = fr.face_encodings(test_image,face_location)
 pil_image = Image.fromarray(test_image)
